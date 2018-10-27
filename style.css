@@ -1,0 +1,147 @@
+body {
+	margin: 0;
+	font-family: 'Quicksand';
+	padding-bottom: 20px;
+}
+
+@font-face {
+	font-family: 'Quicksand', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.heading {
+	text-align: center;
+	margin: 5vh 0 10px;
+	font-size: 45px;
+}
+
+.active{
+	background-color: #4d7fd1;
+}
+
+nav {
+	width: 100%;
+	height: 45px;
+	background-color: #5342f4;
+	display: flex;
+  /* shadow for nav bar for different browsers*/
+	-webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+nav a {
+	/*display: flex;*/
+	padding: 5px;
+  margin-right: 5px;
+	margin-left: 5px;
+	color: #eee;
+	font-size: 30px;
+	border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #4d7fd1;
+	transition: background 0.2s ease;
+}
+
+
+
+.formele {
+	width: 50%;
+	background: transparent;
+	margin: 3vh auto;
+	border-radius: 8px;
+	transition: background 0.8s ease;
+}
+
+.formele > * {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+/*
+.error {
+	padding: 10px;
+	font-size: 19px;
+}
+
+.errorcolor {
+	background: #d32f2f;
+}
+
+.successcolor {
+	background: green;
+}*/
+
+.mssg {
+	text-align: center;
+	padding: 11px 0;
+	width: 200px;
+	border-radius: 7px;
+	margin: 0px auto -1.5vh;
+}
+
+.formele input:not([type='submit']) {
+	width: 60%;
+	background: transparent;
+	border-style: none none solid none;
+	color: #686868;
+	padding: 12px;
+	border-radius: 2px;
+	border-width: 3px;
+	font-weight: bold;
+	font-size: 21px;
+	border-radius: 0;
+	border-color: #686868;
+	transition: border-color 0.5s ease-in-out;
+}
+
+.formele input[type='submit'] {
+	border-radius: 3px;
+	background: rgba(51, 51, 51, 0.8);
+	color: #eee;
+	border: none;
+	padding: 15px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	transition: background 0.5s ease;
+	margin-top: 30px;
+}
+
+.formele input[type='submit']:hover {
+	background: rgba(100, 100, 100, 1);
+	transition: background 0.5s ease;
+}
+
+.formele input:not([type='submit']):focus {
+	border-color: #2196f3;
+	transition: border-color 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 800px) {
+
+	.formele {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	.formele {
+		width: 100%;
+	}
+
+	.heading {
+		font-size: 40px;
+	}
+
+}
