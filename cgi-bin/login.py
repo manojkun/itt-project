@@ -8,15 +8,13 @@ uid = form.getvalue('uid')
 pss = form.getvalue('pass')
 
 conn = sqlite3.connect('users.db')
-cursor = conn.execute("SELECT COUNT(*) FROM USERS WHERE PASS='"+pss+"';")
+cursor = conn.execute("SELECT COUNT(*) FROM USERS WHERE UID='"+uid+"' and PSS='"+pss+"';")
 for row in cursor:
     count = int(row[0])
 if count==1:
     print ("Set-Cookie:UserID = XYZ;")
     print("Location:../profile.html\r\n\r\n")
     #print ("Set-Cookie:Password = XYZ123;\r\n")
-
-
 else:
-    print("Location:../login.html\r\n\r\n")
+    print("Location:../login.html?err=1\r\n\r\n")
 conn.close()

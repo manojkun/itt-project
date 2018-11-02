@@ -74,13 +74,15 @@ nav a:hover {
 	font-size: 19px;
 }
 
-.errorcolor {
-	background: #d32f2f;
-}
+
 
 .successcolor {
 	background: green;
 }*/
+
+.errorcolor {
+	color: #d32f2f;
+}
 
 .mssg {
 	text-align: center;
@@ -96,6 +98,7 @@ nav a:hover {
 	border-style: none none solid none;
 	color: #686868;
 	padding: 12px;
+	margin-bottom: 4px;
 	border-radius: 2px;
 	border-width: 3px;
 	font-weight: bold;
@@ -125,23 +128,4 @@ nav a:hover {
 .formele input:not([type='submit']):focus {
 	border-color: #2196f3;
 	transition: border-color 0.5s ease-in-out;
-}
-
-@media only screen and (max-width: 800px) {
-
-	.formele {
-		width: 70%;
-	}
-}
-
-@media only screen and (max-width: 500px) {
-
-	.formele {
-		width: 100%;
-	}
-
-	.heading {
-		font-size: 40px;
-	}
-
 }

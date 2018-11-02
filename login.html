@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8"/>
   <link rel="stylesheet" type="text/css" href="style.css">
 <title>
 Trade Online
 </title>
+<script >
+function checkGet(){
+  if(window.location.search!=""){
+    var errp = document.getElementById('pss');
+    errp.style.display = "block";
+  }
+}
+</script>
 </head>
-<body>
+<body onload="checkGet()">
 
 <nav>
-   <a class="active" href="index.html">Home</a>
+   <a class="active" href="login.html">Home</a>
    <a href="register.html">Register</a>
-   <a href="">Contact</a>
+   <a href="contact.html">Contact</a>
    <a href="">About</a>
 </nav>
 
@@ -22,6 +31,7 @@ Trade Online
 </div>
 <div class="formele">
 <input type="password" name="pass" placeholder="Password" required>
+<p class="errorcolor" style="display:none" id="pss">Please Enter Correct Username/Password</p>
 </div>
 <div class="formele">
 <input type="submit" value="Submit">

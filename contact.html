@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+<title>
+Trade Online
+</title>
+<script >
+function checkGet(){
+  if(window.location.search!=""){
+    var errp = document.getElementById('sub');
+    errp.style.display = "block";
+  }
+}
+</script>
+
+</head>
+<body onload="checkGet()">
+
+<nav>
+   <a href="index.html">Home</a>
+   <a href="register.html">Register</a>
+   <a class="active" href="">Contact</a>
+   <a href="">About</a>
+</nav>
+
+<div class="heading">Contact Us.</div>
+
+  <center>
+    <p id="sub" style="display:none; color:green;">
+    Submitted Successfully!!
+    </p>
+    Please Email us at <a href="mailto:feedback@stockTrader.com">feedback@stockTrader.com</a>
+    Or<br/>
+  You can leave us a Message
+  <form action="/cgi-bin/contact.py" method="post">
+    <div class="formele">
+    <input type="text" name="email" placeholder="Email">
+    </div>
+    <textarea rows="8" cols="60" name="msg" placeholder="Enter your message here.."></textarea>
+    <div class="formele">
+    <input class="formele" type="submit" value="Send">
+  </div>
+  </form>
+</center>
+</body>
+</html>
