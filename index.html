@@ -8,7 +8,7 @@ Trade Online
 </title>
 <script>
 $("button").click(function(){
-   $.getJSON("localhost:3000/employees?first_name=Sebastian", function(result){
+   $.getJSON("localhost/csv-to-api/index.php?source=http://localhost/lol.csv", function(result){
        $.each(result, function(i, field){
            $("div").append(field + " ");
        });
