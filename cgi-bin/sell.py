@@ -20,13 +20,21 @@ for row in cursor:
     count += 1
     qty_old = int(row[0])
 if count==0:
-    #stock is not in user's Holdings
-    conn.execute("insert into holdings values('"+sname+"',"+str(qty)+",'"+uid+"') ")
+    #stock is not in user's Holdings (Error)
+    print("Location:../sell.html?err=1\r\n\r\n")
 else:
-    #stock already in holdings
-    qty += qty_old
-    conn.execute("update holdings set qty="+str(qty)+" where UID='"+uid+"' and sname='"+sname+"' ")
+    #stock in holdings
+    qty = qty_old - qty
+    if qty<0:
+        #selling more than owned
+        print("Location:../sell.html?err=2\r\n\r\n")
+    elif qty==0:
+        #selling everything owned by user
+        conn.execute("delete from holdings where UID='"+uid+"' and sname='"+sname+"' ")
+    else:
+        #update quantity
+        conn.execute("update holdings set qty="+str(qty)+" where UID='"+uid+"' and sname='"+sname+"' ")
 
 conn.commit()
 conn.close()
-print("Location:../buy.html?err=0\r\n\r\n")
+print("Location:../sell.html?err=0\r\n\r\n")

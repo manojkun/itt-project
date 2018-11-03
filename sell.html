@@ -5,36 +5,46 @@
 <title>
 Trade Online
 </title>
+<script>
+function checkGet(){
+  var get = window.location.search;
+  if(get=="?err=0"){
+    var errp = document.getElementById('pss');
+    errp.style.display = "block";
+  }
+  else if (get=="?err=1") {
+    var errp = document.getElementById('pss');
+    errp.style.display = "block";
+    errp.style.color="red";
+    errp.innerHTML = "You Do not Own this stock!!";
+  }
+  else if (get=="?err=2") {
+    var errp = document.getElementById('pss');
+    errp.style.display = "block";
+    errp.style.color="red";
+    errp.innerHTML = "You Cannot sell more than you own,Please check Holdings";
+  }
+}
+</script>
 </head>
-<body>
-
+<body onload="checkGet()">
 <nav>
-   <a href="login.html">Home</a>
-   <a class="active" href="">Register</a>
-   <a href="contact.html">Contact</a>
-   <a href="">About</a>
+   <a href="profile.html">Home</a>
+   <a href="buy.html">Buy</a>
+   <a class="active" href="sell.html">Sell</a>
+   <a href="/cgi-bin/hold.py">Holdings</a>
+   <a href="funds.html">Add/Remove Funds</a>
 </nav>
 
-<div class="heading">Registration</div>
-<form name="reg" action="/cgi-bin/register.py" method="post">
-<div class="formele">
-<input type="text" name="fname" placeholder="First Name" required>
-</div>
-<div class="formele">
-<input type="text" name="lname" placeholder="Last Name" required>
-</div>
-<div class="formele">
-<input type="text" name="bno" placeholder="Account No:" required>
-</div>
-<div class="formele">
-<input type="text" name="uid" placeholder="Username" required>
-</div>
-<div class="formele">
-<input type="password" name="pass" placeholder="Password" required>
-</div>
-<div class="formele">
-<input type="submit" value="Submit">
-</div>
+<div class="heading">Sell Stock</div>
+<form action="/cgi-bin/sell.py" method="post">
+  <div class="formele">
+    <input type="text" name="quote" placeholder="Quote">
+    <input type="text" name="qty" placeholder="Quantity">
+    <input type="submit" value="Sell">
+  </div>
 </form>
+<center><p style="display:none; color:green;" id="pss">Sold Successfully!</p></center>
+
 </body>
 </html>

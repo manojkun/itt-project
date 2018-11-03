@@ -5,24 +5,39 @@
 <title>
 Trade Online
 </title>
+<script>
+function checkGet(){
+  var get = window.location.search;
+  if(get=="?err=0"){
+    var errp = document.getElementById('pss');
+    errp.style.display = "block";
+  }
+  else if (get=="?err=1") {
+    var errp = document.getElementById('pss');
+    errp.style.display = "block";
+    errp.style.color="red";
+    errp.innerHTML = "Insufficient Funds!!";
+  }
+}
+</script>
 </head>
-<body>
+<body onload="checkGet()">
 <nav>
    <a href="profile.html">Home</a>
    <a class="active" href="buy.html">Buy</a>
    <a href="sell.html">Sell</a>
-   <a href="holdings.html">Holdings</a>
+   <a href="/cgi-bin/hold.py">Holdings</a>
    <a href="funds.html">Add/Remove Funds</a>
 </nav>
 
 <div class="heading">Buy Stock</div>
-<form action="buy.py" method="post">
+<form action="/cgi-bin/buy.py" method="post">
   <div class="formele">
     <input type="text" name="quote" placeholder="Quote">
     <input type="text" name="qty" placeholder="Quantity">
     <input type="submit" value="Buy">
   </div>
 </form>
-
+<center><p style="display:none; color:green;" id="pss">Bought Successfully!</p></center>
 </body>
 </html>

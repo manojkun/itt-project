@@ -4,7 +4,13 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 <title>
 Trade Online
-</title>
+</title><!--
+<script>
+  if(document.referrer!="http://localhost/login.html"){
+    alert("Please Login First!!")
+    window.location.href="login.html";
+  }
+</script>-->
 </head>
 <body>
 
@@ -12,7 +18,7 @@ Trade Online
    <a class="active" href="profile.html">Home</a>
    <a href="buy.html">Buy</a>
    <a href="sell.html">Sell</a>
-   <a href="holdings.html">Holdings</a>
+   <a href="/cgi-bin/hold.py">Holdings</a>
    <a href="funds.html">Add/Remove Funds</a>
 </nav>
 
